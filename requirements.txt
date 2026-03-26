@@ -1,0 +1,54 @@
+# ══════════════════════════════════════════════════════════════════════════════
+# NEXUS — requirements.txt
+# Python 3.10+
+# ══════════════════════════════════════════════════════════════════════════════
+
+# ── Core data / config ────────────────────────────────────────────────────────
+numpy>=1.26
+scipy>=1.13
+pydantic>=2.7
+pydantic-settings>=2.3
+orjson>=3.10
+
+# ── Embeddings & reranking ────────────────────────────────────────────────────
+sentence-transformers>=2.7       # all-MiniLM-L6-v2 + cross-encoder reranker
+pyarrow>=16.0                    # required by lancedb
+
+# ── Vector stores ─────────────────────────────────────────────────────────────
+lancedb>=0.8                     # embedded, no server required
+qdrant-client>=1.9               # optional server backend
+
+# ── LLM backends (install at least one) ──────────────────────────────────────
+anthropic>=0.30                  # Anthropic Claude (set ANTHROPIC_API_KEY)
+openai>=1.30                     # OpenAI GPT (set OPENAI_API_KEY)
+litellm>=1.40                    # 100+ provider proxy
+
+# ── Observability ─────────────────────────────────────────────────────────────
+prometheus-client>=0.20
+structlog>=24.2
+
+# ── Retry / resilience ────────────────────────────────────────────────────────
+tenacity>=8.3
+
+# ── Web API ───────────────────────────────────────────────────────────────────
+fastapi>=0.111
+uvicorn>=0.30
+websockets>=12.0
+
+# ── Graphs (causal registry, ontology) ───────────────────────────────────────
+networkx>=3.3
+
+# ── System monitoring ─────────────────────────────────────────────────────────
+psutil>=5.9
+
+# ══════════════════════════════════════════════════════════════════════════════
+# Optional extras (uncomment as needed)
+# ══════════════════════════════════════════════════════════════════════════════
+
+# Accelerated inference (GPU setups)
+# torch>=2.3
+# accelerate>=0.30
+# bitsandbytes>=0.43
+
+# Rich terminal output
+# rich>=13.7
